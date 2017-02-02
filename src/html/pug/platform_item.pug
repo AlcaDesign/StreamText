@@ -1,0 +1,8 @@
+.item
+	.title= title
+	for value in values
+		.value
+			label(for=value.id)= value.label
+			input(id=value.id type="text" value= (value.value || value.default))
+			.tokens= value.tokens.join(', ')
+	.preview

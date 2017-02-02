@@ -1,0 +1,170 @@
+// compressed: true
+
+@import 'roboto.scss';
+
+$light: hsl(207, 89%, 68%);
+$primary: hsl(207, 90%, 54%);
+$dark: hsl(212, 80%, 42%);
+
+html,
+body{
+	margin: 0;
+	background-color: hsl(0, 0%, 8%);
+	font-family: 'Roboto', sans-serif;
+	color: hsl(0, 0%, 100%);
+	box-sizing: border-box;
+	// user-select: none;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+::selection {
+	background-color: $primary;
+}
+
+#header {
+	background-color: hsl(0, 0%, 20%);
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 40px;
+	font-size: 24px;
+	line-height: 40px;
+	padding: 0 20px;
+	z-index: 1000;
+	box-shadow: 0 -4px 20px 4px hsla(0, 0%, 0%, 0.4);
+	
+	#title {
+		display: inline-block;
+		margin-right: 20px;
+	}
+	
+	#selector {
+		display: inline-block;
+		
+		select {
+			height: 24px;
+			vertical-align: middle;
+			border: 1px solid hsla(0, 0%, 100%, 0.1);
+			background-color: hsl(0, 0%, 14%);
+			color: inherit;
+			font-size: 0.75em;
+			outline: none;
+			font-family: inherit;
+			padding: 0 6px;
+			
+			option,
+			optgroup {
+				background-color: hsl(0, 0%, 12%);
+				outline: none;
+				font-family: inherit;
+			}
+		}
+	}
+}
+
+#platform {
+	position: absolute;
+	top: 40px;
+	left: 0;
+	right: 0;
+	padding: 14px;
+	
+	.item {
+		padding: 10px;
+		border-radius: 4px;
+		background-color: hsl(0, 0%, 18%);
+		
+		&:not(:last-child) {
+			margin-bottom: 8px;
+		}
+		
+		div:not(:last-child) {
+			padding-bottom: 10px;
+			margin-bottom: 10px;
+			border-bottom: 1px solid hsla(0, 0%, 100%, 0.05);
+		}
+		label,
+		.preview:before {
+			display: block;
+			font-size: 12px;
+			margin-bottom: 4px;
+			text-transform: uppercase;
+			font-weight: 300;
+			margin-left: 2px;
+		}
+		.title {
+			font-size: 20px;
+			margin-bottom: 8px;
+		}
+		.value {
+			
+			label {
+			}
+			input {
+				width: 100%;
+				font-size: 18px;
+				font-family: inherit;
+				padding: 4px 8px;
+				background-color: hsl(0, 0%, 14%);
+				border: 1px solid hsla(0, 0%, 100%, 0.1);
+				color: inherit;
+				border-radius: 4px;
+				margin-bottom: 4px;
+				
+				&:focus {
+					// outline: 2px solid $dark;
+					outline: none;
+					box-shadow: 0 0 2px 2px $dark;
+				}
+			}
+			.tokens {
+				color: $light;
+				margin-left: 4px;
+				
+				&:before {
+					content: 'Tokens: ';
+					color: hsla(0, 0%, 100%, 0.9);
+				}
+			}
+		}
+		.preview {
+			padding: 6px 12px;
+			background-color: hsl(0, 0%, 16%);
+			position: relative;
+			margin-top: 28px;
+			border: 1px solid hsla(0, 0%, 100%, 0.05);
+			border-radius: 4px;
+			color: hsla(0, 0%, 100%, 0.85);
+			
+			&:before {
+				content: 'Preview';
+				position: absolute;
+				top: -18px;
+				left: 0;
+				color: hsl(0, 0%, 100%);
+			}
+		}
+		
+		
+		// .preview {
+		// 	padding: 6px 12px;
+		// 	position: relative;
+		// 	margin-top: 28px;
+		// 	color: hsla(0, 0%, 100%, 0.85);
+		// 	
+		// 	&:before {
+		// 		content: 'Preview';
+		// 		position: absolute;
+		// 		top: -18px;
+		// 		left: 0;
+		// 		color: hsl(0, 0%, 100%);
+		// 	}
+		// }
+	}
+}

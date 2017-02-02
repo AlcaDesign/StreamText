@@ -1,0 +1,57 @@
+//output: index.html
+//{
+		options: [
+			'Follows'
+		]
+	}
+
+doctype html
+html
+	head
+		meta(charset="utf-8")
+		title StreamText
+		link(rel="stylesheet" href="css/style.min.css")
+	body
+		svg
+			defs
+				//- filter#grade
+				linearGradient#fadeGrad(y2="1" x2="0")
+					stop(offset="0.5" stop-color="white" stop-opacity="0")
+					stop(offset="1" stop-color="red" stop-opacity="1")
+				mask#fade(maskContentUnits="objectBoundingBox")
+					rect(width="1" height="1" fill="url(#fadeGrad)")
+					
+		#header
+			#title StreamText
+			#selector
+				select
+					each item in options
+						option= item
+						
+		#platform
+			.item
+				.title Total Follow Count
+				.value
+					label(for="follows_totalcount_message") Message template
+					input#follows_totalcount_message(type="text" value="Follow count: %count%")
+					.tokens count
+				.preview Follow count: 419
+			.item
+				.title Most Recent Follower
+				.value
+					label(for="follows_mostrecent_message") Message template
+					input#follows_mostrecent_message(type="text" value="Most recent follower: %name%")
+					.tokens name
+				.preview Most recent follower: username
+			.item
+				.title Last Followers
+				.value
+					label(for="follows_lastfollowers_message") Message template
+					input#follows_lastfollowers_message(type="text" value="Last followers: %list%")
+					.tokens list
+				.value
+					label(for="follows_lastfollowers_list") List template
+					input#follows_lastfollowers_list(type="text" value="%name%, ")
+					.tokens name
+				.preview Last followers: username, username 
+	script(src="js/platform.js")

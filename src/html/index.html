@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>StreamText</title>
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+  <body>
+    <svg>
+      <defs>
+        <linearGradient id="fadeGrad" y2="1" x2="0">
+          <stop offset="0.5" stop-color="white" stop-opacity="0"></stop>
+          <stop offset="1" stop-color="red" stop-opacity="1"></stop>
+        </linearGradient>
+        <mask id="fade" maskContentUnits="objectBoundingBox">
+          <rect width="1" height="1" fill="url(#fadeGrad)"></rect>
+        </mask>
+      </defs>
+    </svg>
+    <div id="header">
+      <div id="title">StreamText</div>
+      <div id="selector">
+        <select>
+          <option>Follows</option>
+        </select>
+      </div>
+    </div>
+    <div id="platform">
+      <div class="item">
+        <div class="title">Total Follow Count</div>
+        <div class="value">
+          <label for="follows_totalcount_message">Message template</label>
+          <input id="follows_totalcount_message" type="text" value="Follow count: %count%">
+          <div class="tokens">count</div>
+        </div>
+        <div class="preview">Follow count: 419</div>
+      </div>
+      <div class="item">
+        <div class="title">Most Recent Follower</div>
+        <div class="value">
+          <label for="follows_mostrecent_message">Message template</label>
+          <input id="follows_mostrecent_message" type="text" value="Most recent follower: %name%">
+          <div class="tokens">name</div>
+        </div>
+        <div class="preview">Most recent follower: username</div>
+      </div>
+      <div class="item">
+        <div class="title">Last Followers</div>
+        <div class="value">
+          <label for="follows_lastfollowers_message">Message template</label>
+          <input id="follows_lastfollowers_message" type="text" value="Last followers: %list%">
+          <div class="tokens">list</div>
+        </div>
+        <div class="value">
+          <label for="follows_lastfollowers_list">List template</label>
+          <input id="follows_lastfollowers_list" type="text" value="%name%, ">
+          <div class="tokens">name</div>
+        </div>
+        <div class="preview">Last followers: username, username </div>
+      </div>
+    </div>
+  </body>
+  <script src="js/platform.js"></script>
+</html>
